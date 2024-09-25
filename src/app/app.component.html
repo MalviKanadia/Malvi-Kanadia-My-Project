@@ -1,13 +1,2 @@
-<div class ="display">
-  <h2>Store List</h2>
-  <div *ngFor="let user of userList" class="Store-card">
-    <h3>{{user.productName}}</h3>
-    <p>ID: {{user.id}}</p>
-    <p>Qauntity of Product: {{user.quantity}}</p>
-    <p>Color : {{user.color}}</p>
-    <p>Gift Wrapping of Product : {{user.giftWrap}}</p>
-    <button (click)="toggleGiftWrapStatus(user)" class="toggleStatus">
-      Wrapping Option yes or no?
-    </button>
-  </div>
-</div>
+<h1>{{ title }}</h1>
+<app-content-list></app-content-list>
