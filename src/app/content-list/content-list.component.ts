@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import {User} from "../Shared/models/user";
 import {ContentListItemComponent} from "../content-list-item/content-list-item.component";
+import {NgClass, NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
   imports: [
-    ContentListItemComponent
+    ContentListItemComponent,
+    NgForOf,
+    NgClass
   ],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.css'

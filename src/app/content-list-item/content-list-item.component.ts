@@ -14,4 +14,5 @@ import {NgIf} from "@angular/common";
 export class ContentListItemComponent {
   @Input() item ?:User;
 
+
 }
