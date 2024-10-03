@@ -10,7 +10,7 @@
       <th>GiftWrap</th>
   </thead>
   <tbody>
-    <tr *ngFor="let item of userList">
+    <tr *ngFor="let item of userList" (click)="selectItem(item)">
       <td>{{item.id}}</td>
       <td>{{item.productName}}</td>
       <td>{{item.quantity}}</td>
@@ -19,6 +19,7 @@
     </tr>
   </tbody>
   </table>
+  <app-content-list-item [item]="selectedItem"></app-content-list-item>
 
 </div>
 

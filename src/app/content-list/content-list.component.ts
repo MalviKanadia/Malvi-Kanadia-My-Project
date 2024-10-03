@@ -29,4 +29,8 @@ export class ContentListComponent implements OnInit {
     complete:() => console.log('My store data fetching complete'),
     })
   }
+  selectedItem?:User;
+  selectItem(item:User):void{
+    this.selectedItem=item;
+  }
 }
