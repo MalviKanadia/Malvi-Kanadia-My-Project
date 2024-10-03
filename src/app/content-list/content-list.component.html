@@ -1,14 +1,24 @@
-<body>
-<table>
+<div class="store">
+  <h2>My Store List</h2>
+  <table>
+    <thead>
+      <tr>
+      <th>ID</th>
+      <th>ProductName</th>
+      <th>Quantity</th>
+      <th>Color</th>
+      <th>GiftWrap</th>
+  </thead>
   <tbody>
-  <tr *ngFor="let item of userList; let i= index">
-
-    <td colspan ="5">
-      <app-content-list-item [item]="item" [ngClass]="{'even-item':i%2==0,'odd-item':i%2!=0 }"></app-content-list-item>
-
-    </td>
-  </tr>
+    <tr *ngFor="let item of userList">
+      <td>{{item.id}}</td>
+      <td>{{item.productName}}</td>
+      <td>{{item.quantity}}</td>
+      <td>{{item.color}}</td>
+      <td>{{item.giftWrap ? 'Yes':'No'}}</td>
+    </tr>
   </tbody>
-</table>
-</body>
+  </table>
+
+</div>
 

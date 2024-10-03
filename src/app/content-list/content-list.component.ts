@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {User} from "../Shared/models/user";
 import {ContentListItemComponent} from "../content-list-item/content-list-item.component";
 import {NgClass, NgForOf} from "@angular/common";
@@ -15,13 +15,18 @@ import {MyStoreService} from "../Services/my-store.service";
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.css'
 })
-export class ContentListComponent {
-  userList: User[] =[
-    {id:1, productName:"WaterBottle", quantity:1, color:"cyan", giftWrap:false},
-    {id:2, productName:"Bag", quantity:1, color:"black",  giftWrap:false},
-    {id:3, productName:"LunchBox",  quantity:2, color:"biege",  giftWrap:true},
-    {id:4, productName:"Box", quantity:4, color:"purple", giftWrap:true},]
+export class ContentListComponent implements OnInit {
+  displayedColumns: string[]=['id','productName','quantity','color','giftWrap']
+  userList: User[] =[]
 
   constructor(private myStoreService: MyStoreService) {
+
+  }
+  ngOnInit() {
+    this.myStoreService.getMyStore().subscribe({
+      next:(data: User[]) => this.userList = data,
+      error: err => console.error("Error fetching My store",err),
+    complete:() => console.log('My store data fetching complete'),
+    })
   }
 }

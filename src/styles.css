@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+.app-store{
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  color: red;
+}/* You can add global styles to this file, and also import other style files */
+h1{
+  margin-bottom: 10px;
+}
