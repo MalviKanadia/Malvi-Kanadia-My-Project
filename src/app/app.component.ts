@@ -17,7 +17,6 @@ export class AppComponent {
   title = 'MyStore';
 
   constructor(private myStoreService: MyStoreService) {
-
   }
 
 }
