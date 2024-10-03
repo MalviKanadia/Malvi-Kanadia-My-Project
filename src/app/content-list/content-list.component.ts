@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {User} from "../Shared/models/user";
 import {ContentListItemComponent} from "../content-list-item/content-list-item.component";
 import {NgClass, NgForOf} from "@angular/common";
+import {MyStoreService} from "../Services/my-store.service";
 
 @Component({
   selector: 'app-content-list',
@@ -21,4 +22,6 @@ export class ContentListComponent {
     {id:3, productName:"LunchBox",  quantity:2, color:"biege",  giftWrap:true},
     {id:4, productName:"Box", quantity:4, color:"purple", giftWrap:true},]
 
+  constructor(private myStoreService: MyStoreService) {
+  }
 }
