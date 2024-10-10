@@ -1,3 +1,10 @@
 <body>
+<div class="nav">
+  <nav>
+    <a routerLink="/items" routerLinkActive="active">Item List</a>
+    <a routerLink="/modify-item" routerLinkActive="active">Modify Item</a>
+
+  </nav>
+</div>
 <div class="app-store"><h1>{{ title }}</h1>
-  <app-content-list></app-content-list></div></body>
+  <router-outlet></router-outlet></div></body>

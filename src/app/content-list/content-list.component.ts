@@ -3,6 +3,7 @@ import {User} from "../Shared/models/user";
 import {ContentListItemComponent} from "../content-list-item/content-list-item.component";
 import {NgClass, NgForOf} from "@angular/common";
 import {MyStoreService} from "../Services/my-store.service";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-content-list',
@@ -10,7 +11,8 @@ import {MyStoreService} from "../Services/my-store.service";
   imports: [
     ContentListItemComponent,
     NgForOf,
-    NgClass
+    NgClass,
+    RouterLink
   ],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.css'

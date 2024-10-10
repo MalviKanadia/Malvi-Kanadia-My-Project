@@ -4,5 +4,6 @@ export interface User {
   quantity: number;
   color:string;
   giftWrap: boolean
+  image? : string;
 
 }

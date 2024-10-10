@@ -1,11 +1,17 @@
 
 <div *ngIf="item" class="item-list">
   <h1>Item List</h1>
-  <h2><strong> ProductName:</strong>{{item.productName}}</h2>
+  <p><strong> ProductName:</strong>{{item.productName}}
+    <img [src]="item.image" fill alt="bottle">
+  </p>
   <p><strong> ID:</strong>{{item.id}}</p>
   <p><strong> Quantity:</strong>{{item.quantity}}</p>
   <p><strong> Color:</strong>{{item.color}}</p>
   <p><strong> Gift Wrap:</strong>{{item.giftWrap ? 'Yes':'No'}}</p>
+  <button (click)="goBackward()" [disabled]="currentIndex===0">Previous</button>
+  <button (click)="goForward()" [disabled]="currentIndex === userList.length - 1" >Next</button>
+  <button (click)="goBack()">Back to student List</button>
+
 </div>
 
 
