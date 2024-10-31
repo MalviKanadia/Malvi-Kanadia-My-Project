@@ -22,7 +22,6 @@ export class ContentListComponent implements OnInit {
   userList: User[] =[]
 
   constructor(private myStoreService: MyStoreService) {
-
   }
   ngOnInit() {
     this.myStoreService.getMyStore().subscribe({
