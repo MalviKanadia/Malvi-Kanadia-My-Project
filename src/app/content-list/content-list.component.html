@@ -1,25 +1,14 @@
 <div class="store">
   <h2>My Store List</h2>
-  <table>
-    <thead>
-      <tr>
-      <th>ID</th>
-      <th>ProductName</th>
-      <th>Quantity</th>
-      <th>Color</th>
-      <th>GiftWrap</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of userList" [routerLink]="['/items',item.id ]" >
-      <td>{{item.id}}</td>
-      <td>{{item.productName}}</td>
-      <td>{{item.quantity}}</td>
-      <td>{{item.color}}</td>
-      <td>{{item.giftWrap ? 'Yes':'No'}}</td>
-    </tr>
-  </tbody>
-  </table>
 
+    <div class="item" *ngFor="let item of userList" [routerLink]="['/items',item.id ]" >
+      <p><strong>ID</strong>{{item.id}}</p>
+      <p><strong>Product Name</strong>{{item.productName}}</p>
+      <p><strong>Quantity</strong>{{item.quantity}}</p>
+      <p><strong>Color</strong>{{item.color}}</p>
+      <p><strong>GiftWrap</strong>{{item.giftWrap ? 'Yes':'No'}}</p>
+      <button type="button" (click)="delete(item.id)">Delete</button>
+      <button type="button" (click)="navigateToItemList()">Edit</button>
+    </div>
 
 </div>
-
