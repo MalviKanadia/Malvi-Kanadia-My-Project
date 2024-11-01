@@ -12,32 +12,35 @@ export class MyStoreService {
   private items: User[] = userList;
   constructor() { }
     getMyStore(): Observable<User[]> {
-     return of (userList);
+     return of (this.items);
     }
     //getting item by id
     getItemById(id: number): Observable<User | undefined> {
-    const item = this.items.find(user => user.id === id);
-    return of(item);
+      return of(this.items.find(item => item.id === id));
     }
 
     //adding item
-    addItem(newItem: User) : Observable <User[]>{
-    this.items.push(newItem)
-    return of (this.items);
+    addItem(item: User) : Observable <User>{
+    this.items.push(item)
+    return of (item);
     }
 
     //updating item
-    updateItem(updatedItem:User): Observable <User[]>{
-    const index = this.items.findIndex(user => user.id !== updatedItem.id);
-    if(index !== -1){
+    updateItem(updatedItem: User): Observable <User | undefined>{
+    const index = this.items.findIndex(item => item.id === updatedItem.id);
+    if(index > -1){
       this.items[index]=updatedItem;
+      return of(updatedItem);
     }
-    return of(this.items);
+    return of (undefined);
     }
 
     //deleting item
-    deleteItem(itemId: number) : Observable <User[]>{
-    this.items = this.items.filter(user => user.id !== itemId);
+    deleteItem(id: number) : Observable <User[]>{
+    this.items = this.items.filter(item => item.id !== id);
     return of (this.items);
     }
+  generateNewId(): number {
+    return this.items.length > 0 ? Math.max(...this.items.map(item => item.id)) + 1 : 1;
+  }
 }

@@ -41,23 +41,7 @@ export class ContentListItemComponent implements OnInit {
       });
     });
   }
-  goBack(): void {
-    this.router.navigate(['/items']);
-  }
 
-  goForward(): void {
-    if(this.currentIndex <this.userList.length-1) {
-      this.currentIndex++;
-      this.router.navigate(['/items',this.userList[this.currentIndex].id]);
-    }
-  }
-
-  goBackward(): void {
-    if(this.currentIndex >0) {
-      this.currentIndex--;
-      this.router.navigate(['/items',this.userList[this.currentIndex].id]);
-    }
-  }
 
 
 }
