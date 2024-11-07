@@ -20,6 +20,7 @@ import {catchError, map, of, switchMap} from "rxjs";
 export class ModifyListItemComponent implements OnInit {
   itemForm: FormGroup;
   items: User | undefined;
+  error: string|null=null;
 
 
   constructor(
@@ -29,7 +30,7 @@ export class ModifyListItemComponent implements OnInit {
     private router: Router
   ) {
     this.itemForm = this.fb.group({
-      id: ['', Validators.required],
+      id: [myStoreService.generateNewId()],
       productName: ['', Validators.required],
       quantity: ['', Validators.required],
       color: [''],
@@ -38,33 +39,33 @@ export class ModifyListItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+    const id =  Number(this.route.snapshot.paramMap.get('id'));
     if (id) {
-      this.myStoreService.getItemById(+id).subscribe(items => {
-        if(items) {
-          this.items = items;
-
-          this.itemForm.patchValue(items);
-        }
+      this.myStoreService.getItemById(id).subscribe({
+        next: item=>{
+          if(item){
+            this.itemForm.patchValue(item)
+          }
+      }, error: err => {
+        this.error = 'Error fetching item';
+        console.error('Error fetching item:', err);
+      }
       });
     }
-  }
+
+}
 
   onSubmit(): void {
-    const items: User = this.itemForm.value;
-    if (items.id) {
-      this.myStoreService.updateItem(items);
-    } else {
-      const newId = this.myStoreService.generateNewId();
-      items.id = newId;
-      this.myStoreService.addItem(items);
+    if (this.itemForm.valid) {
+      const item: User = this.itemForm.value;
+      if (item.id) {
+        this.myStoreService.updateItem(item).subscribe(() => this.router.navigate(['/items']));
+      } else {
+        item.id = this.myStoreService.generateNewId();
+        this.myStoreService.addItem(item).subscribe(() => this.router.navigate(['/items']));
+      }
     }
-
-    this.router.navigate(['/items']);
   }
-
-
-
 
 
 }

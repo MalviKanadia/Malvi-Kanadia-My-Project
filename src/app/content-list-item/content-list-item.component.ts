@@ -18,6 +18,7 @@ export class ContentListItemComponent implements OnInit {
   item:User | undefined;
   userList: User[] =[];
   currentIndex: number=0;
+  error:string|null=null;
 
 
   constructor(
@@ -27,8 +28,10 @@ export class ContentListItemComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.myStoreService.getMyStore().subscribe(user => {
-      this.userList = user;
+    this.myStoreService.getMyStore().subscribe({
+      next: (users: User[]) => {
+        this.userList = users;
+        this.error = null;
 
       this.route.paramMap.subscribe(params => {
         const id = Number(params.get('id'));
@@ -39,8 +42,13 @@ export class ContentListItemComponent implements OnInit {
 
 
       });
-    });
-  }
+  },
+      error: (err) => {
+        this.error = 'Error fetching items';
+        console.error('Error fetching items', err);
+      }
+      });
+    }
 
 
 

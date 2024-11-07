@@ -18,7 +18,7 @@ export class MyStoreService {
      return this.http.get<User[]>(this.apiUrl).pipe(catchError(this.handleError));
     }
     //getting item by id
-    getItemById(id: number): Observable<User > {
+  getItemById(id: number): Observable<User> {
       return this.http.get<User>(`${this.apiUrl}/${id}`).pipe(catchError(this.handleError));
     }
 
@@ -43,7 +43,7 @@ export class MyStoreService {
     return this.items.length > 0 ? Math.max(...this.items.map(item => item.id)) + 1 : 1;
   }
   private handleError(error: HttpErrorResponse) {
-    console.error('API error', error);
+    console.error('API error:', error);
     return throwError(()=> new Error('server error, please try again.'));
   }
 }
