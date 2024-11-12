@@ -30,7 +30,7 @@ export class ContentListComponent implements OnInit {
   ngOnInit() {
     this.myStoreService.getMyStore().subscribe({
       next: (data: User[]) => {
-        this.userList = data,
+        this.userList = data;
           this.error = null
       },
 

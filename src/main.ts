@@ -22,9 +22,9 @@ const routes: Routes = [
 ];
 bootstrapApplication(AppComponent, {
   providers: [
-    provideHttpClient(), // Ensure that HTTP interceptors are properly configured
+    provideHttpClient(),
     provideRouter(routes),
     importProvidersFrom(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 1000
-    })) // Import providers dynamically
+    }))
   ],
 }).catch((err) => console.error(err));
