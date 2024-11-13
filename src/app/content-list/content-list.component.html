@@ -2,8 +2,8 @@
   <h2>My Store List</h2>
 
     <div class="item" *ngFor="let item of userList" [routerLink]="['/items',item.id ]" >
-      <p><strong>Product Name: </strong>{{item.productName | titlecase }}</p>
       <p><strong>ID: </strong>{{item.id}}</p>
+      <p><strong>Product Name: </strong>{{item | productDescription| titlecase }}</p>
       <p><strong>Quantity: </strong>{{item.quantity}}</p>
       <p><strong>Color: </strong>{{item.color | uppercase }}</p>
       <p><strong>Price: </strong>{{item.price | currency: 'CAD': "symbol-narrow"}}</p>

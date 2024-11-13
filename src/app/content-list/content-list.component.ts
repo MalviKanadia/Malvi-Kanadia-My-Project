@@ -5,6 +5,7 @@ import {CurrencyPipe, NgClass, NgForOf, NgIf, TitleCasePipe, UpperCasePipe} from
 import {MyStoreService} from "../Services/my-store.service";
 import {Router, RouterLink} from "@angular/router";
 import {FormGroup} from "@angular/forms";
+import {ProductDescriptionPipe} from "../pipes/product-description.pipe";
 
 @Component({
   selector: 'app-content-list',
@@ -17,7 +18,8 @@ import {FormGroup} from "@angular/forms";
     NgIf,
     CurrencyPipe,
     UpperCasePipe,
-    TitleCasePipe
+    TitleCasePipe,
+    ProductDescriptionPipe
   ],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.css'
