@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {User} from "../Shared/models/user";
-import {NgIf, NgOptimizedImage} from "@angular/common";
+import {CurrencyPipe, NgIf, NgOptimizedImage, TitleCasePipe, UpperCasePipe} from "@angular/common";
 import {ActivatedRoute, Router} from "@angular/router";
 import {MyStoreService} from "../Services/my-store.service";
 
@@ -9,7 +9,10 @@ import {MyStoreService} from "../Services/my-store.service";
   standalone: true,
   imports: [
     NgOptimizedImage,
-    NgIf
+    NgIf,
+    UpperCasePipe,
+    CurrencyPipe,
+    TitleCasePipe
   ],
   templateUrl: './content-list-item.component.html',
   styleUrl: './content-list-item.component.css'

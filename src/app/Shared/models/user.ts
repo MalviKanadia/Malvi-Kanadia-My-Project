@@ -3,7 +3,8 @@ export interface User {
   productName: string;
   quantity: number;
   color:string;
-  giftWrap: boolean
+  giftWrap: boolean;
+  price: number;
   image? : string;
 
 }

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from "../Shared/models/user";
 import {ContentListItemComponent} from "../content-list-item/content-list-item.component";
-import {NgClass, NgForOf, NgIf} from "@angular/common";
+import {CurrencyPipe, NgClass, NgForOf, NgIf, TitleCasePipe, UpperCasePipe} from "@angular/common";
 import {MyStoreService} from "../Services/my-store.service";
 import {Router, RouterLink} from "@angular/router";
 import {FormGroup} from "@angular/forms";
@@ -14,7 +14,10 @@ import {FormGroup} from "@angular/forms";
     NgForOf,
     NgClass,
     RouterLink,
-    NgIf
+    NgIf,
+    CurrencyPipe,
+    UpperCasePipe,
+    TitleCasePipe
   ],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.css'
