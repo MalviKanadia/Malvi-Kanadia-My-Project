@@ -6,6 +6,7 @@ import {MyStoreService} from "../Services/my-store.service";
 import {Router, RouterLink} from "@angular/router";
 import {FormGroup} from "@angular/forms";
 import {ProductDescriptionPipe} from "../pipes/product-description.pipe";
+import {ModifyListItemComponent} from "../modify-list-item/modify-list-item.component";
 
 @Component({
   selector: 'app-content-list',

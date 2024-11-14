@@ -31,8 +31,8 @@ export class ModifyListItemComponent implements OnInit {
   ) {
     this.itemForm = this.fb.group({
       id: [myStoreService.generateNewId()],
-      productName: ['', Validators.required],
-      quantity: ['', Validators.required],
+      productName: [''],
+      quantity: [''],
       color: [''],
       giftWrap: [false]
     });

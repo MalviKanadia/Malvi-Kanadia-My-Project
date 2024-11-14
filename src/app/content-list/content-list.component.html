@@ -3,10 +3,10 @@
 
     <div class="item" *ngFor="let item of userList" [routerLink]="['/items',item.id ]" >
       <p><strong>ID: </strong>{{item.id}}</p>
-      <p><strong>Product Name: </strong>{{item | productDescription| titlecase }}</p>
+      <p><strong>Product Name And Description: </strong>{{item | productDescription| titlecase }}</p>
       <p><strong>Quantity: </strong>{{item.quantity}}</p>
       <p><strong>Color: </strong>{{item.color | uppercase }}</p>
-      <p><strong>Price: </strong>{{item.price | currency: 'CAD': "symbol-narrow"}}</p>
+      <p><strong>Price: </strong>{{item.price | currency: 'CAD'}}</p>
       <p><strong>GiftWrap: </strong>{{item.giftWrap ? 'Yes':'No'}}</p>
       <button type="button" (click)="delete(item.id)">Delete</button>
       <button type="button" (click)="navigateToItemList()">Edit</button>
