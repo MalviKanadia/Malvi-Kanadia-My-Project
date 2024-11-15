@@ -43,7 +43,6 @@ export class ContentListItemComponent implements OnInit {
           this.item = this.userList[this.currentIndex];
         }
 
-
       });
   },
       error: (err) => {
