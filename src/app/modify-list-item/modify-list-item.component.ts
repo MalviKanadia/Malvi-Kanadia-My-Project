@@ -5,6 +5,8 @@ import {User} from "../Shared/models/user";
 import {ActivatedRoute, Router} from "@angular/router";
 import {MyStoreService} from "../Services/my-store.service";
 import {catchError, map, of, switchMap} from "rxjs";
+import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
+import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.directive";
 
 @Component({
   selector: 'app-modify-list-item',
@@ -13,6 +15,8 @@ import {catchError, map, of, switchMap} from "rxjs";
     FormsModule,
     NgIf,
     ReactiveFormsModule,
+    HoverHighlightDirective,
+    HighlightOnFocusDirective,
   ],
   templateUrl: './modify-list-item.component.html',
   styleUrl: './modify-list-item.component.css'

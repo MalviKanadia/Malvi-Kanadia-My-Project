@@ -3,6 +3,7 @@ import {User} from "../Shared/models/user";
 import {CurrencyPipe, NgIf, NgOptimizedImage, TitleCasePipe, UpperCasePipe} from "@angular/common";
 import {ActivatedRoute, Router} from "@angular/router";
 import {MyStoreService} from "../Services/my-store.service";
+import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
 
 @Component({
   selector: 'app-content-list-item',
@@ -12,7 +13,8 @@ import {MyStoreService} from "../Services/my-store.service";
     NgIf,
     UpperCasePipe,
     CurrencyPipe,
-    TitleCasePipe
+    TitleCasePipe,
+    HoverHighlightDirective
   ],
   templateUrl: './content-list-item.component.html',
   styleUrl: './content-list-item.component.css'

@@ -7,6 +7,7 @@ import {Router, RouterLink} from "@angular/router";
 import {FormGroup} from "@angular/forms";
 import {ProductDescriptionPipe} from "../pipes/product-description.pipe";
 import {ModifyListItemComponent} from "../modify-list-item/modify-list-item.component";
+import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
 
 @Component({
   selector: 'app-content-list',
@@ -20,7 +21,8 @@ import {ModifyListItemComponent} from "../modify-list-item/modify-list-item.comp
     CurrencyPipe,
     UpperCasePipe,
     TitleCasePipe,
-    ProductDescriptionPipe
+    ProductDescriptionPipe,
+    HoverHighlightDirective
   ],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.css'
