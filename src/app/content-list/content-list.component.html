@@ -2,12 +2,12 @@
   <h2>My Store List</h2>
 
     <div class="item" *ngFor="let item of userList" [routerLink]="['/items',item.id ]" [appHoverHighlight]="'beige'" >
-      <p><strong>ID: </strong>{{item.id}}</p>
-      <p><strong>Product Name And Description: </strong>{{item | productDescription| titlecase }}</p>
-      <p><strong>Quantity: </strong>{{item.quantity}}</p>
-      <p><strong>Color: </strong>{{item.color | uppercase }}</p>
-      <p><strong>Price: </strong>{{item.price | currency: 'CAD'}}</p>
-      <p><strong>GiftWrap: </strong>{{item.giftWrap ? 'Yes':'No'}}</p>
+      <p  [appHoverHighlight]="'lightblue'"><strong>ID: </strong>{{item.id}}</p>
+      <p [appHoverHighlight]="'lightblue'"><strong>Product Name And Description: </strong>{{item | productDescription| titlecase }}</p>
+      <p [appHoverHighlight]="'lightblue'"><strong>Quantity: </strong>{{item.quantity}}</p>
+      <p [appHoverHighlight]="'lightblue'"><strong>Color: </strong>{{item.color | uppercase }}</p>
+      <p [appHoverHighlight]="'lightblue'"><strong>Price: </strong>{{item.price | currency: 'CAD'}}</p>
+      <p [appHoverHighlight]="'lightblue'"><strong>GiftWrap: </strong>{{item.giftWrap ? 'Yes':'No'}}</p>
       <button type="button" (click)="delete(item.id)" [appHoverHighlight]="'green'">Delete</button>
       <button type="button" (click)="navigateToItemList()" [appHoverHighlight]="'green'">Edit</button>
     </div>
