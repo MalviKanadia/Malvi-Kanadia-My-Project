@@ -38,6 +38,7 @@ export class ModifyListItemComponent implements OnInit {
       productName: [''],
       quantity: [''],
       color: [''],
+      price:[''],
       giftWrap: [false]
     });
   }
