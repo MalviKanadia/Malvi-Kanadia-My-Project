@@ -10,6 +10,7 @@ import {provideHttpClient} from "@angular/common/http";
 import {importProvidersFrom} from "@angular/core";
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryDataService} from "./app/Services/in-memory-data.services";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 
@@ -32,6 +33,6 @@ bootstrapApplication(AppComponent, {
   providers: [
     provideHttpClient(),
     provideRouter(routes),
-    importProvidersFrom(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 1 }))
+    importProvidersFrom(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 1 })), provideAnimationsAsync()
   ],
 }).catch((err) => console.error(err));
