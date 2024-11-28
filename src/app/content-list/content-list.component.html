@@ -1,16 +1,25 @@
 <div class="store">
   <h2>My Store List</h2>
 
-    <div class="item" *ngFor="let item of userList" [routerLink]="['/items',item.id ]" [appHoverHighlight]="'beige'" >
-      <p  [appHoverHighlight]="'lightblue'"><strong>ID: </strong>{{item.id}}</p>
-      <p [appHoverHighlight]="'lightblue'"><strong>Product Name And Description: </strong>{{item | productDescription| titlecase }}</p>
-      <p [appHoverHighlight]="'lightblue'"><strong>Quantity: </strong>{{item.quantity}}</p>
-      <p [appHoverHighlight]="'lightblue'"><strong>Color: </strong>{{item.color | uppercase }}</p>
-      <p [appHoverHighlight]="'lightblue'"><strong>Price: </strong>{{item.price | currency: 'CAD'}}</p>
-      <p [appHoverHighlight]="'lightblue'"><strong>GiftWrap: </strong>{{item.giftWrap ? 'Yes':'No'}}</p>
-      <button type="button" (click)="delete(item.id)" [appHoverHighlight]="'green'">Delete</button>
-      <button type="button" (click)="navigateToItemList()" [appHoverHighlight]="'green'">Edit</button>
+  <mat-list class="item" *ngFor="let item of userList" [routerLink]="['/items',item.id ]" [appHoverHighlight]="'beige'" role="list">
+    <mat-list-item [appHoverHighlight]="'lightblue'" role="listitem"><strong>ID: </strong>{{item.id}}</mat-list-item>
+    <mat-list-item [appHoverHighlight]="'lightblue'"><strong>Product Name And Description: </strong>{{item | productDescription| titlecase }}</mat-list-item>
+    <mat-list-item [appHoverHighlight]="'lightblue'"><strong>Quantity: </strong>{{item.quantity}}</mat-list-item>
+    <mat-list-item [appHoverHighlight]="'lightblue'"><strong>Color: </strong>{{item.color | uppercase }}</mat-list-item>
+    <mat-list-item [appHoverHighlight]="'lightblue'"><strong>Price: </strong>{{item.price | currency: 'CAD'}}</mat-list-item>
+    <mat-list-item [appHoverHighlight]="'lightblue'"><strong>GiftWrap: </strong>{{item.giftWrap ? 'Yes':'No'}}</mat-list-item>
+<!--    <button type="button" (click)="delete(item.id)" [appHoverHighlight]="'green'">Delete</button>-->
+<!--    <button type="button" (click)="navigateToItemList()" [appHoverHighlight]="'green'">Edit</button>-->
+    <div class="button-group">
+      <button mat-raised-button color="primary" type="button" (click)="delete(item.id)" [appHoverHighlight]="'lightblue'">Delete</button>
+      <button mat-raised-button color="primary" type="button" (click)="navigateToItemList()" [appHoverHighlight]="'lightblue'">Edit</button>
     </div>
 
+    <!-- Error Message -->
+
+  </mat-list>
+
+  <div *ngIf="error" class="error mat-error">{{ error }}</div>
+
 </div>
-<div *ngIf="error" class="error">{{ error }}</div>
+

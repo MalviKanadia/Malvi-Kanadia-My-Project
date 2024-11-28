@@ -7,6 +7,10 @@ import {MyStoreService} from "../Services/my-store.service";
 import {catchError, map, of, switchMap} from "rxjs";
 import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
 import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.directive";
+import {MatFormField} from "@angular/material/form-field";
+import {MatInput, MatInputModule} from "@angular/material/input";
+import {MatCheckbox, MatCheckboxModule} from "@angular/material/checkbox";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-modify-list-item',
@@ -17,6 +21,13 @@ import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.direct
     ReactiveFormsModule,
     HoverHighlightDirective,
     HighlightOnFocusDirective,
+    MatFormField,
+    MatInput,
+    MatCheckbox,
+    MatInputModule,
+    MatCheckboxModule,
+    MatButton,
+
   ],
   templateUrl: './modify-list-item.component.html',
   styleUrl: './modify-list-item.component.css'
@@ -25,6 +36,7 @@ export class ModifyListItemComponent implements OnInit {
   itemForm: FormGroup;
   items: User | undefined;
   error: string|null=null;
+  userList: User[] =[]
 
 
   constructor(
@@ -70,6 +82,13 @@ export class ModifyListItemComponent implements OnInit {
         this.myStoreService.addItem(item).subscribe(() => this.router.navigate(['/items']));
       }
     }
+  }
+  delete(id : number):void{
+    this.userList = this.userList.filter(item => item.id !== id);
+  }
+
+  navigateToItemList(): void {
+    this.router.navigate(['/modify-item']);
   }
 
 

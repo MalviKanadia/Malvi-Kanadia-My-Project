@@ -24,7 +24,7 @@ export class ContentListItemComponent implements OnInit {
   userList: User[] =[];
   currentIndex: number=0;
   error:string|null=null;
-
+  displayedColumns: string[]=['id','productName','quantity','color','giftWrap'];
 
   constructor(
     private route: ActivatedRoute,

@@ -8,6 +8,8 @@ import {FormGroup} from "@angular/forms";
 import {ProductDescriptionPipe} from "../pipes/product-description.pipe";
 import {ModifyListItemComponent} from "../modify-list-item/modify-list-item.component";
 import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
+import {MatList, MatListItem} from "@angular/material/list";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-content-list',
@@ -22,7 +24,10 @@ import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
     UpperCasePipe,
     TitleCasePipe,
     ProductDescriptionPipe,
-    HoverHighlightDirective
+    HoverHighlightDirective,
+    MatList,
+    MatListItem,
+    MatButton
   ],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.css'
@@ -39,7 +44,7 @@ export class ContentListComponent implements OnInit {
     this.myStoreService.getMyStore().subscribe({
       next: (data: User[]) => {
         this.userList = data;
-          this.error = null
+        this.error = null
       },
 
       error: err => {

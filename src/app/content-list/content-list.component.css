@@ -1,31 +1,10 @@
-.store{
-  margin: 20px;
-  padding: 10px;
+.button-group {
+ text-align: center;
+  gap: 1rem;
 }
-h2{
-  text-align: center;
-  text-decoration:underline;
-  color:darkblue;
-}
-.item{
-  text-align: left;
-  border: 2px solid black;
 
-}
-p{
-  color: black;
-}
-button {
-  background-color: #007bff;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 5px 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+.mat-error {
+  color: red;
+  font-weight: bold;
+  margin-top: 1rem;
 }

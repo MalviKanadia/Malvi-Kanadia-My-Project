@@ -1,41 +1,26 @@
-form{
+.mat-form {
   max-width: 600px;
   margin: 0 auto;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-.form-group {
-  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; // Space between form fields
 }
 
-
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  color: black;
-}
-input[type=text],
-input[type=number],
-input[type=checkbox] {
+.form-field {
   width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
 }
-button{
-  background-color: #007bff;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: left;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 5px 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+
+.checkbox {
+  margin: 1rem 0;
+}
+
+.button-group {
+  text-align: center;
+  gap: 1rem;
+}
+
+.mat-error {
+  color: red;
+  font-weight: bold;
+  margin-top: 1rem;
 }
