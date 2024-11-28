@@ -5,11 +5,13 @@ import {JsonPipe, NgForOf} from "@angular/common";
 import {ContentListItemComponent} from "./content-list-item/content-list-item.component";
 import {ContentListComponent} from "./content-list/content-list.component";
 import {MyStoreService} from "./Services/my-store.service";
+import {MatToolbar} from "@angular/material/toolbar";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, JsonPipe, ContentListComponent, RouterLinkActive, RouterLink],
+  imports: [RouterOutlet, NgForOf, JsonPipe, ContentListComponent, RouterLinkActive, RouterLink, MatToolbar, MatButton],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
