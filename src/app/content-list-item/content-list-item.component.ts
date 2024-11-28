@@ -4,6 +4,8 @@ import {CurrencyPipe, NgIf, NgOptimizedImage, TitleCasePipe, UpperCasePipe} from
 import {ActivatedRoute, Router} from "@angular/router";
 import {MyStoreService} from "../Services/my-store.service";
 import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
+import {MatCard, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle} from "@angular/material/card";
+import {ProductDescriptionPipe} from "../pipes/product-description.pipe";
 
 @Component({
   selector: 'app-content-list-item',
@@ -14,7 +16,13 @@ import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
     UpperCasePipe,
     CurrencyPipe,
     TitleCasePipe,
-    HoverHighlightDirective
+    HoverHighlightDirective,
+    MatCardHeader,
+    MatCardTitle,
+    MatCard,
+    MatCardContent,
+    MatCardSubtitle,
+    ProductDescriptionPipe
   ],
   templateUrl: './content-list-item.component.html',
   styleUrl: './content-list-item.component.css'

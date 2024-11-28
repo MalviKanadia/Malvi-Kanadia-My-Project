@@ -1,11 +1,16 @@
 
 <div *ngIf="item" class="item-list" >
-  <h2 >Item List</h2>
-  <p [appHoverHighlight]="'lightblue'"><strong> ID: </strong>{{item.id}}</p>
-  <p [appHoverHighlight]="'lightblue'"><strong> ProductName: </strong>{{item.productName | titlecase}}</p>
-  <p [appHoverHighlight]="'lightblue'"><strong> Quantity: </strong>{{item.quantity}}</p>
-  <p [appHoverHighlight]="'lightblue'"><strong> Color: </strong>{{item.color  | uppercase}}</p>
-  <p [appHoverHighlight]="'lightblue'"><strong> Price: </strong>{{item.price | currency: 'CAD': "symbol-narrow"}}</p>
-  <p [appHoverHighlight]="'lightblue'"><strong> Gift Wrap: </strong>{{item.giftWrap ? 'Yes':'No'}}</p>
+  <mat-card class="item-card">
+  <mat-card-title class="title">My Store</mat-card-title>
+    <mat-card-subtitle>Item List</mat-card-subtitle>
+    <mat-card-content [appHoverHighlight]="'lightblue'"><strong> ID: </strong>{{item.id}}</mat-card-content>
+  <mat-card-content [appHoverHighlight]="'lightblue'"><strong> ProductName: </strong>{{item|productDescription | titlecase}}</mat-card-content>
+  <mat-card-content [appHoverHighlight]="'lightblue'"><strong> Quantity: </strong>{{item.quantity}}</mat-card-content>
+  <mat-card-content [appHoverHighlight]="'lightblue'"><strong> Color: </strong>{{item.color  | uppercase}}</mat-card-content>
+  <mat-card-content [appHoverHighlight]="'lightblue'"><strong> Price: </strong>{{item.price | currency: 'CAD': "symbol-narrow"}}</mat-card-content>
+  <mat-card-content [appHoverHighlight]="'lightblue'"><strong> Gift Wrap: </strong>{{item.giftWrap ? 'Yes':'No'}}</mat-card-content>
+  </mat-card>
 </div>
-<div *ngIf="error" class="error">{{ error }}</div>
+<div *ngIf="error" mat-card class="error-card">
+  <mat-card-content>{{ error }}</mat-card-content>
+</div>
