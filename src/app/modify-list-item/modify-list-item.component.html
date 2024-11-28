@@ -2,32 +2,32 @@
 
   <mat-form-field appearance="outline" class="form-field" disabled>
     <mat-label>ID</mat-label>
-    <input matInput type="number" formControlName="id" [appHighlightOnFocus]="'lightblue'"/>
+    <input matInput type="number" formControlName="id" [appHighlightOnFocus]="'lightblue'" matTooltip="Enter ID"/>
   </mat-form-field>
 
 
   <mat-form-field appearance="outline" class="form-field">
-    <mat-label>Product Name</mat-label>
-    <input matInput type="text" formControlName="productName"  [appHighlightOnFocus]="'lightblue'"/>
+    <mat-label >Product Name</mat-label>
+    <input matInput type="text" formControlName="productName"  [appHighlightOnFocus]="'lightblue'" matTooltip="Enter product Name"/>
   </mat-form-field>
 
   <mat-form-field appearance="outline" class="form-field">
     <mat-label>Quantity</mat-label>
-    <input matInput type="text" formControlName="qauntity" [appHighlightOnFocus]="'lightblue'" />
+    <input matInput type="text" formControlName="qauntity" [appHighlightOnFocus]="'lightblue'" matTooltip="Enter Quantity" />
   </mat-form-field>
 
   <mat-form-field appearance="outline" class="form-field">
     <mat-label>Color</mat-label>
-    <input matInput type="text" formControlName="color" [appHighlightOnFocus]="'lightblue'"/>
+    <input matInput type="text" formControlName="color" [appHighlightOnFocus]="'lightblue'" matTooltip="Enter Color"/>
   </mat-form-field>
 
 
   <mat-form-field appearance="outline" class="form-field">
     <mat-label>Price</mat-label>
-    <input matInput type="text" formControlName="price" [appHighlightOnFocus]="'lightblue'"/>
+    <input matInput type="text" formControlName="price" [appHighlightOnFocus]="'lightblue'" matTooltip="Enter Price"/>
   </mat-form-field>
 
-  <mat-checkbox formControlName="giftWrap" class="checkbox">giftWrap</mat-checkbox >
+  <mat-slide-toggle labelPosition="before" formControlName="giftWrap" class="checkbox">giftWrap</mat-slide-toggle>
 
   <div class="button-group">
     <button mat-raised-button color="primary" type="submit" [appHoverHighlight]="'lightblue'">Submit</button>

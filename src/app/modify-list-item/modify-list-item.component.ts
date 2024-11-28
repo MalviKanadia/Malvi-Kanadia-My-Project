@@ -11,6 +11,8 @@ import {MatFormField} from "@angular/material/form-field";
 import {MatInput, MatInputModule} from "@angular/material/input";
 import {MatCheckbox, MatCheckboxModule} from "@angular/material/checkbox";
 import {MatButton} from "@angular/material/button";
+import {MatTooltip} from "@angular/material/tooltip";
+import {MatSlideToggle} from "@angular/material/slide-toggle";
 
 @Component({
   selector: 'app-modify-list-item',
@@ -27,6 +29,8 @@ import {MatButton} from "@angular/material/button";
     MatInputModule,
     MatCheckboxModule,
     MatButton,
+    MatTooltip,
+    MatSlideToggle,
 
   ],
   templateUrl: './modify-list-item.component.html',

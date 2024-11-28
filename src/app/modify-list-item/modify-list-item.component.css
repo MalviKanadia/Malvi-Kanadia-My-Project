@@ -3,7 +3,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; // Space between form fields
+  gap: 1.5rem;
 }
 
 .form-field {
