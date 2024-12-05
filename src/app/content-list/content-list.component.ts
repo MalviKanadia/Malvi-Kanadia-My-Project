@@ -12,25 +12,24 @@ import {MatList, MatListItem} from "@angular/material/list";
 import {MatButton} from "@angular/material/button";
 
 @Component({
-  selector: 'app-content-list',
-  standalone: true,
-  imports: [
-    ContentListItemComponent,
-    NgForOf,
-    NgClass,
-    RouterLink,
-    NgIf,
-    CurrencyPipe,
-    UpperCasePipe,
-    TitleCasePipe,
-    ProductDescriptionPipe,
-    HoverHighlightDirective,
-    MatList,
-    MatListItem,
-    MatButton
-  ],
-  templateUrl: './content-list.component.html',
-  styleUrl: './content-list.component.css'
+    selector: 'app-content-list',
+    imports: [
+        ContentListItemComponent,
+        NgForOf,
+        NgClass,
+        RouterLink,
+        NgIf,
+        CurrencyPipe,
+        UpperCasePipe,
+        TitleCasePipe,
+        ProductDescriptionPipe,
+        HoverHighlightDirective,
+        MatList,
+        MatListItem,
+        MatButton
+    ],
+    templateUrl: './content-list.component.html',
+    styleUrl: './content-list.component.css'
 })
 export class ContentListComponent implements OnInit {
   displayedColumns: string[]=['id','productName','quantity','color','giftWrap']

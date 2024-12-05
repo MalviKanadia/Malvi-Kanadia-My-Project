@@ -15,26 +15,24 @@ import {MatTooltip} from "@angular/material/tooltip";
 import {MatSlideToggle} from "@angular/material/slide-toggle";
 
 @Component({
-  selector: 'app-modify-list-item',
-  standalone: true,
-  imports: [
-    FormsModule,
-    NgIf,
-    ReactiveFormsModule,
-    HoverHighlightDirective,
-    HighlightOnFocusDirective,
-    MatFormField,
-    MatInput,
-    MatCheckbox,
-    MatInputModule,
-    MatCheckboxModule,
-    MatButton,
-    MatTooltip,
-    MatSlideToggle,
-
-  ],
-  templateUrl: './modify-list-item.component.html',
-  styleUrl: './modify-list-item.component.css'
+    selector: 'app-modify-list-item',
+    imports: [
+        FormsModule,
+        NgIf,
+        ReactiveFormsModule,
+        HoverHighlightDirective,
+        HighlightOnFocusDirective,
+        MatFormField,
+        MatInput,
+        MatCheckbox,
+        MatInputModule,
+        MatCheckboxModule,
+        MatButton,
+        MatTooltip,
+        MatSlideToggle,
+    ],
+    templateUrl: './modify-list-item.component.html',
+    styleUrl: './modify-list-item.component.css'
 })
 export class ModifyListItemComponent implements OnInit {
   itemForm: FormGroup;

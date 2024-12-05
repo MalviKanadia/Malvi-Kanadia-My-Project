@@ -8,24 +8,23 @@ import {MatCard, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle} f
 import {ProductDescriptionPipe} from "../pipes/product-description.pipe";
 
 @Component({
-  selector: 'app-content-list-item',
-  standalone: true,
-  imports: [
-    NgOptimizedImage,
-    NgIf,
-    UpperCasePipe,
-    CurrencyPipe,
-    TitleCasePipe,
-    HoverHighlightDirective,
-    MatCardHeader,
-    MatCardTitle,
-    MatCard,
-    MatCardContent,
-    MatCardSubtitle,
-    ProductDescriptionPipe
-  ],
-  templateUrl: './content-list-item.component.html',
-  styleUrl: './content-list-item.component.css'
+    selector: 'app-content-list-item',
+    imports: [
+        NgOptimizedImage,
+        NgIf,
+        UpperCasePipe,
+        CurrencyPipe,
+        TitleCasePipe,
+        HoverHighlightDirective,
+        MatCardHeader,
+        MatCardTitle,
+        MatCard,
+        MatCardContent,
+        MatCardSubtitle,
+        ProductDescriptionPipe
+    ],
+    templateUrl: './content-list-item.component.html',
+    styleUrl: './content-list-item.component.css'
 })
 export class ContentListItemComponent implements OnInit {
   item:User | undefined;
