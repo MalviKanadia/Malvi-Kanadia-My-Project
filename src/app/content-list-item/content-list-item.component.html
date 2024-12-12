@@ -14,3 +14,34 @@
 <div *ngIf="error" mat-card class="error-card">
   <mat-card-content>{{ error }}</mat-card-content>
 </div>
+<!--<mat-card>-->
+<!--  <mat-card-header>-->
+<!--    <mat-card-title>Sitter Details</mat-card-title>-->
+<!--  </mat-card-header>-->
+
+<!--  <mat-card-content>-->
+<!--    <div *ngIf="sitter" class="sitter-detail">-->
+<!--      &lt;!&ndash; Highlight the sitter's name &ndash;&gt;-->
+<!--      <h2 appHighlight>{{ sitter.name }}</h2>-->
+
+<!--      <div class="sitter-info">-->
+<!--        <p><strong>Age:</strong> {{ sitter.age | age }} years</p>-->
+<!--        <p><strong>Experience:</strong> {{ sitter.experience }} years</p>-->
+<!--        <p><strong>Specialty:</strong> {{ sitter.specialty }}</p>-->
+<!--        <p><strong>Rating:</strong> {{ sitter.rating | ratingPipe }} stars</p>-->
+
+<!--        &lt;!&ndash; Availability: Replace the avail pipe with the directive &ndash;&gt;-->
+<!--        <p><strong>Availability:</strong> <span [appSitterStatus]="sitter.available"></span></p>-->
+<!--      </div>-->
+
+<!--      <div class="sitter-photo" *ngIf="sitter.photo">-->
+<!--        <p><strong>Photo:</strong></p>-->
+<!--        <img [src]="sitter.photo" alt="{{ sitter.name }}'s photo" class="sitter-photo-img"/>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </mat-card-content>-->
+
+<!--  <mat-card-actions>-->
+<!--    <a routerLink="/sitters" mat-button class="back-link">Back to Sitters</a>-->
+<!--  </mat-card-actions>-->
+<!--</mat-card>-->
